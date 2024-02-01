@@ -104,6 +104,7 @@
   text-overflow: ellipsis;
   font-weight: bolder;
   margin-right: 5px;
+  cursor: pointer;
 }
 
 .loginPage hr {
@@ -153,6 +154,9 @@
 } */
 .sellMenu .sellMenuContent span {
   margin-left: 5px;
+}
+.logout{
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 700px) {

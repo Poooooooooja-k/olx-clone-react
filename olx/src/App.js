@@ -6,29 +6,26 @@ import Signup from './Pages/Signup';
 import Login from './Pages/Login';
 import { Authcontext ,FirebaseContext} from './store/Context';
 import { getAuth,onAuthStateChanged } from 'firebase/auth';
-
-
+import Create from './Pages/Create'
+import ViewPost from './Pages/ViewPost'
+import Post from './store/PostContext';
 
 function App() {
   const  authctx = useContext(Authcontext)
   const firebaseApp=useContext(FirebaseContext)
   // const auth = getAuth(firebaseapp);
-  useEffect(() => {
-    if (firebaseApp) {
-      const auth = getAuth(firebaseApp);
-      onAuthStateChanged(auth, (user) => {
-        console.log(user.displayName)
-        authctx.setUser(user);
-      });
-    }
-  }, [firebaseApp, authctx.setUser]);
+ 
   return (
     <div>
+      <Post>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/create' element={<Create/>}/>
+        <Route path='/view' element={<ViewPost/>}/>
       </Routes>
+      </Post>
     </div>
   );
 }
