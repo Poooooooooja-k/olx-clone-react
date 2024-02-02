@@ -15,7 +15,6 @@ const Create = () => {
   const user=useContext(Authcontext)
   const date=new Date()
   const storageRef=ref(storage,`/image/${image.name}`)
-console.log('yyyyyyyyyyyyyyyyyy',user.user.uid)
 
   const handleSubmit=async()=>{
     try{
@@ -34,7 +33,6 @@ console.log('yyyyyyyyyyyyyyyyyy',user.user.uid)
       navigate('/')
     }catch(error){
       console.log(error)
-      console.log('adich poy')
     }
   }
   return (
@@ -42,7 +40,6 @@ console.log('yyyyyyyyyyyyyyyyyy',user.user.uid)
       <Header />
       <card>
         <div className="centerDiv">
-         
             <label htmlFor="fname">Name</label>
             <br />
             <input
@@ -74,17 +71,14 @@ console.log('yyyyyyyyyyyyyyyyyy',user.user.uid)
           
           <br />
           <img alt="Posts" width="200px" height="200px" src={image ? URL.createObjectURL(image) : ''} />
-
           <br />
               <input
           onChange={(e) => {
             setImage(e.target.files[0])
           }}
-          
           type="file" />
             <br/>
             <button onClick={handleSubmit} className="uploadBtn">upload and Submit</button>
-         
         </div>
       </card>
     </Fragment>
