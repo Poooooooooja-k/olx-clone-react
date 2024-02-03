@@ -5,7 +5,7 @@ import Logo from '../../olx-logo.png';
 import './Signup.css';
 import { useNavigate } from 'react-router-dom';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
-
+import { Link } from 'react-router-dom';
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -94,7 +94,7 @@ export default function Signup() {
           <br />
           <button type="submit">Signup</button>
         </form>
-        <a>Login</a>
+        <span><Link to='/login'><a>Login</a></Link></span>
       </div>
     </div>
   );
